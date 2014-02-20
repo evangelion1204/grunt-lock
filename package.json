@@ -1,0 +1,46 @@
+{
+  "name": "grunt-lock",
+  "description": "Wraps nodejs lockfile with some additional features",
+  "version": "0.1.0",
+  "homepage": "https://github.com/evangelion1204/grunt-lock",
+  "author": {
+    "name": "Michael Geppert",
+    "email": "evangelion1204@aol.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evangelion1204/grunt-lock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evangelion1204/grunt-lock/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/evangelion1204/grunt-lock/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "lockfile": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin",
+    "lockfile"
+  ],
+  "dependencies": {
+    "lockfile": "~0.4.2"
+  }
+}
