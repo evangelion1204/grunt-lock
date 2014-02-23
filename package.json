@@ -1,7 +1,7 @@
 {
   "name": "grunt-lock",
   "description": "Wraps nodejs lockfile with some additional features",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/evangelion1204/grunt-lock",
   "author": {
     "name": "Michael Geppert",
@@ -31,10 +31,11 @@
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "lockfile": "~0.4.2"
+    "lockfile": "~0.4.2",
+    "readline": "0.0.3"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.2"
   },
   "keywords": [
     "gruntplugin",

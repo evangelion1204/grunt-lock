@@ -1,4 +1,4 @@
-# grunt-real-shell
+# grunt-lock
 
 > A Grunt-Plugin to handle lockfiles within Grunt, currently just wraps https://www.npmjs.org/package/lockfile
 

@@ -31,6 +31,10 @@ module.exports = function (grunt) {
         // Configuration to be run (and then tested).
         lockfile: {
             test: {
+                options: {
+                    retries: 5
+                },
+//                interactive: true,
                 path: 'test.lck'
             }
         },
@@ -55,4 +59,6 @@ module.exports = function (grunt) {
 
     // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);
+
+    grunt.registerTask('demo', ['lockfile:test', 'clean']);
 };
