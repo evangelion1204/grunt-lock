@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         readline = require('readline');
 
 
-    grunt.registerMultiTask('lockfile', 'Wraps nodejs lockfile with some additional features', function() {
+    grunt.registerMultiTask('lockfile', 'Wraps nodejs lockfile with some additional features, currently only lockSync.', function() {
         var done = this.async(),
             rl = readline.createInterface({
                 input: process.stdin,

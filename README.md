@@ -1,6 +1,6 @@
 # grunt-lock
 
-> A Grunt-Plugin to handle lockfiles within Grunt, currently just wraps https://www.npmjs.org/package/lockfile
+> A Grunt-Plugin to handle lockfiles within Grunt, currently just wraps lockSync of https://www.npmjs.org/package/lockfile
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
@@ -20,7 +20,7 @@ grunt.loadNpmTasks('grunt-lock');
 ## The "lockfile" task
 ```js
 lockfile: {
-    yourname: {
+    your_target: {
         path: 'yourname.lck'
     }
 }
