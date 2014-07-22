@@ -64,6 +64,7 @@ module.exports = function(grunt) {
                 }
 
                 grunt.log.ok('Lockfile established');
+                rl.close();
                 done();
             };
 
