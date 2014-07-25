@@ -1,6 +1,6 @@
 /*
- * grunt-real-shell
- * https://github.com/evangelion1204/grunt-real-shell
+ * grunt-lock-extended
+ * https://github.com/lxlabg/grunt-lock-extended
  *
  * Copyright (c) 2014 Michael Geppert
  * Licensed under the MIT license.

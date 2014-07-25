@@ -2,7 +2,7 @@
  * grunt-lock
  * https://github.com/lxlang/grunt-lock
  *
- * Copyright (c) 2014 Tobias Lang
+ * Copyright (c) 2014 Michael Geppert
  * Licensed under the MIT license.
  */
 'use strict';
