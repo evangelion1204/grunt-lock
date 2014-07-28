@@ -1,11 +1,14 @@
 /*
  * grunt-lock-extended
- * https://github.com/lxlabg/grunt-lock-extended
+ * https://github.com/lxlang/grunt-lock-extended
+ * 
+ * forked from: https://github.com/evangelion1204/grunt-lock
  *
- * Copyright (c) 2014 Michael Geppert
+ * Original work Copyright (c) 2014 Michael Geppert
+ * Modified work Copyright (c) 2014 Tobias Lang
+ * 
  * Licensed under the MIT license.
  */
-
 'use strict';
 
 module.exports = function (grunt) {

@@ -1,23 +1,23 @@
 {
-  "name": "grunt-lock",
+  "name": "grunt-lock-extended",
   "description": "Wraps nodejs lockfile with some additional features",
-  "version": "0.1.2",
-  "homepage": "https://github.com/evangelion1204/grunt-lock",
+  "version": "0.1.0",
+  "homepage": "https://github.com/lxlang/grunt-lock-extended",
   "author": {
-    "name": "Michael Geppert",
-    "email": "evangelion1204@aol.com"
+    "name": "Tobias Lang",
+    "email": "tobiaslang86@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/evangelion1204/grunt-lock.git"
+    "url": "git@github.com:lxlang/grunt-lock-extended.git"
   },
   "bugs": {
-    "url": "https://github.com/evangelion1204/grunt-lock/issues"
+    "url": "https://github.com/lxlang/grunt-lock-extended/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/evangelion1204/grunt-lock/blob/master/LICENSE"
+      "url": "https://github.com/lxlang/grunt-lock-extended/blob/master/LICENSE"
     }
   ],
   "engines": {
@@ -39,7 +39,8 @@
   },
   "keywords": [
     "gruntplugin",
-    "lockfile"
+    "lockfile",
+    "multithread"
   ],
   "dependencies": {
     "lockfile": "~0.4.2"
