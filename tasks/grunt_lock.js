@@ -75,6 +75,11 @@ module.exports = function (grunt) {
         grunt.verbose.ok('Creating Lockfile');
         //Create lock at every run!
         createLock(data, options, done);
+        
+        //add current pid to options, so that we can check if tasks are childtasks
+        if (!grunt.option('parentPid')) {
+          grunt.option('parentPid', grunt.config.get('pid'));
+        }
       }
       done();
     },
