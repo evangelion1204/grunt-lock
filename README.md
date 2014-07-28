@@ -21,12 +21,37 @@ grunt.loadNpmTasks('grunt-lock-extended');
 ```js
 lockfile: {
     your_target: {
-        path: 'yourname.lck'
+        path: 'yourname.lck',
+        //you can add one task to be ignored by the lockfile task. - i use it for an unlock task with email-reporting
+        ignore: 'taskToIgnore'
     }
 }
 ```
 
+## Autostart the lock
+To ensure the lockfile-task is invoked everytime you use grunt, you should add the following code right after grunt.initConfig()
+```
+grunt.task.run('lockfile');
+```
+
+## The "lockfile" format
+```
+{
+  "user": "currentUser",
+  "pid": 12345,
+  "tasks": ["theExecutedTask"],
+  "created": "<creation time of lockfile in SQL-Format>"
+}
+```
+
 ### Overview
+This Module is supposed to be used on multiuser-systems.
+The generated lockfile will contain information about the invoking task.
+The Task adds the option "parentPid" with the current pid to the grunt-options. That allows us to start 
+childprocesses, in which the current lockfile will not prevent execution.
+
+To allow a childprocess the execucting user and the given parentPid have to match the ones in lockfile.
+
 In your project's Gruntfile, add a section named `lockfile` to the data object passed into `grunt.initConfig()`.
 
 ## Contributing

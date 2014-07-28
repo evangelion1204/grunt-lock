@@ -125,7 +125,11 @@ module.exports = function (grunt) {
     }
 
     grunt.verbose.writeln('Lockfile: ' + data.path);
-
-    handleLockfile(data, options, done);
+    
+    if (grunt.cli.tasks[0] == data.ignore) {
+      grunt.log.ok('Detected ignored task for logfile. Lockchecks disabled. Lockfile will not be created.');
+    } else {
+      handleLockfile(data, options, done);
+    }
   });
 };
