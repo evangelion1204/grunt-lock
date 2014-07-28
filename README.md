@@ -17,6 +17,13 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-lock-extended');
 ```
 
+## Origin
+This modul was forked from https://github.com/evangelion1204/grunt-lock. 
+I had some issues with handling lockfile with multi-thread processes.
+
+If you are looking for a simple and easy to use lockfile-wrapper, i recommend grunt-lock.
+
+
 ## The "lockfile" task
 ```js
 lockfile: {
@@ -30,12 +37,12 @@ lockfile: {
 
 ## Autostart the lock
 To ensure the lockfile-task is invoked everytime you use grunt, you should add the following code right after grunt.initConfig()
-```
+```js
 grunt.task.run('lockfile');
 ```
 
 ## The "lockfile" format
-```
+```js
 {
   "user": "currentUser",
   "pid": 12345,

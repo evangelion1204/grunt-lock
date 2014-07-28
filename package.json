@@ -1,7 +1,7 @@
 {
   "name": "grunt-lock-extended",
   "description": "Wraps nodejs lockfile with some additional features",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/lxlang/grunt-lock-extended",
   "author": {
     "name": "Tobias Lang",

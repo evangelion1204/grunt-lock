@@ -128,6 +128,7 @@ module.exports = function (grunt) {
     
     if (grunt.cli.tasks[0] == data.ignore) {
       grunt.log.ok('Detected ignored task for logfile. Lockchecks disabled. Lockfile will not be created.');
+      done();
     } else {
       handleLockfile(data, options, done);
     }
