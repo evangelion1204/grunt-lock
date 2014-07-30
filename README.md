@@ -30,10 +30,24 @@ lockfile: {
     your_target: {
         path: 'yourname.lck',
         //you can add one task to be ignored by the lockfile task. - i use it for an unlock task with email-reporting
-        ignore: 'taskToIgnore'
+        ignore: 'taskToIgnore',
+        //only allowed tasks can create a lockfile - other tasks will fail fatal
+        allow: ['TaskToAllow']
     }
 }
 ```
+
+### Options
+
+#### path [required]
+The path where your lockfile will be created
+
+#### ignore [optional]
+a string or an array of tasknames that will be ignored creating a lockfile
+
+#### allowed [optional]
+a string or an array of tasknames.
+Only there tasks will be able to run, if this option is set
 
 ## Autostart the lock
 To ensure the lockfile-task is invoked everytime you use grunt, you should add the following code right after grunt.initConfig()
@@ -63,3 +77,6 @@ In your project's Gruntfile, add a section named `lockfile` to the data object p
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+
+This plugin was inspired by https://github.com/evangelion1204/grunt-lock

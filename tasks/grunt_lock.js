@@ -72,10 +72,15 @@ module.exports = function (grunt) {
       }
 
       if (createLockFile) {
+        //if the task would be locked, check if the current task is allowed
+        if (!checkForAllowedTask(data)) {
+          grunt.fail.fatal('Task not allowed');
+        }
+
         grunt.verbose.ok('Creating Lockfile');
         //Create lock at every run!
         createLock(data, options, done);
-        
+
         //add current pid to options, so that we can check if tasks are childtasks
         if (!grunt.option('parentPid')) {
           grunt.option('parentPid', grunt.config.get('pid'));
@@ -111,6 +116,50 @@ module.exports = function (grunt) {
       }
 
       grunt.log.ok('Lockfile established');
+    },
+    checkForIgnoredTask = function (data) {
+      if (!data.ignore) {
+        return false;
+      }
+
+      grunt.verbose.ok('Check for allowed tasks by array');
+
+      for (var taskIndex in grunt.cli.tasks) {
+        var taskName = grunt.cli.tasks[taskIndex];
+        if (Array.isArray(data.ignore)) {
+          if (data.ignore.indexOf(taskName) > 0) {
+            return true;
+          }
+        } else {
+          if (taskName == data.ignore) {
+            return true;
+          }
+        }
+      }
+
+      return false;
+    },
+    checkForAllowedTask = function (data) {
+      if (!data.allowed) {
+        return true;
+      }
+
+      for (var taskIndex in grunt.cli.tasks) {
+        var taskName = grunt.cli.tasks[taskIndex];
+        if (Array.isArray(data.allowed)) {
+          if (data.allowed.indexOf(taskName) < 0) {
+            grunt.fail.fatal('The task ' + taskName + ' is not allowed by lockfile config');
+            return false;
+          }
+        } else {
+          if (taskName == data.allowed) {
+            grunt.fail.fatal('The task ' + taskName + ' is not allowed by lockfile config');
+            return false;
+          }
+        }
+      }
+
+      return true;
     };
 
   grunt.registerMultiTask('lockfile', 'Wraps nodejs lockfile with some additional features, currently only lockSync.', function () {
@@ -118,15 +167,13 @@ module.exports = function (grunt) {
       data = this.data,
       options = data.options || {};
 
-      
-
     if (!data.path) {
       grunt.fail.warn('Missing filename for lockfile');
     }
 
     grunt.verbose.writeln('Lockfile: ' + data.path);
-    
-    if (grunt.cli.tasks[0] == data.ignore) {
+
+    if (checkForIgnoredTask(data)) {
       grunt.log.ok('Detected ignored task for logfile. Lockchecks disabled. Lockfile will not be created.');
       done();
     } else {
