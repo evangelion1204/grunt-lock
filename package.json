@@ -1,7 +1,7 @@
 {
   "name": "grunt-lock-extended",
   "description": "Wraps nodejs lockfile with some additional features",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/lxlang/grunt-lock-extended",
   "author": {
     "name": "Tobias Lang",
@@ -28,11 +28,11 @@
   },
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-nodeunit": "~0.2.0",
     "lockfile": "~0.4.2",
-    "readline": "0.0.3"
+    "minimatch": "^1.0.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.2"
