@@ -34,10 +34,11 @@ module.exports = function (grunt) {
     // Configuration to be run (and then tested).
     lockfile: {
       test: {
-        options: {
-          retries: 5
-        },
         path: 'test.lck',
+        ignored: [
+          'foo',
+          'bar'
+        ],
         allowed: [
           'demo',
           'lockfile'

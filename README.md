@@ -30,9 +30,17 @@ lockfile: {
     your_target: {
         path: 'yourname.lck',
         //you can add one task to be ignored by the lockfile task. - i use it for an unlock task with email-reporting
-        ignore: 'taskToIgnore',
+        ignored: [
+          'taskToIgnore1',
+          'taskToIgnore2'
+        ],
         //only allowed tasks can create a lockfile - other tasks will fail fatal
-        allow: ['TaskToAllow']
+        allowed: [
+          'taskToAllow1',
+          'taskToAllow2'
+        ], 
+        //if true, just the fails and warnings are logged
+        quiet: true|false
     }
 }
 ```
@@ -42,12 +50,15 @@ lockfile: {
 #### path [required]
 The path where your lockfile will be created
 
-#### ignore [optional]
+#### ignored [optional]
 a string or an array of tasknames that will be ignored creating a lockfile
 
 #### allowed [optional]
 a string or an array of tasknames.
 Only there tasks will be able to run, if this option is set
+
+#### quiet [optional - default=false]
+STFU for this module. Just log what is really necessary!
 
 ## Autostart the lock
 To ensure the lockfile-task is invoked everytime you use grunt, you should add the following code right after grunt.initConfig()
